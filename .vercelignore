@@ -13,10 +13,6 @@ scripts/
 BACKEND_SETUP.md
 DEPLOYMENT.md
 
-# Git files
-.git
-.gitignore
-
 # Node modules (already handled by Vercel)
 node_modules/
 .next/
