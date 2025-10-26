@@ -1,6 +1,5 @@
 {
   "buildCommand": "next build",
   "outputDirectory": ".next",
-  "installCommand": "pnpm install",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- app/ components/ public/ package.json pnpm-lock.yaml next.config.mjs tsconfig.json"
+  "installCommand": "pnpm install"
 }
