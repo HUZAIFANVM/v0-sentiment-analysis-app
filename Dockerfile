@@ -5,9 +5,6 @@ FROM python:3.11-slim as backend
 WORKDIR /app
 
 # Install git and git-lfs (to fetch large model files)
-RUN apt-get update && apt-get install -y git git-lfs && \
-    git lfs install && \
-    git lfs pull
 
 # Install Python dependencies
 COPY requirements-backend.txt .
