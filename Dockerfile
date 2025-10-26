@@ -10,8 +10,9 @@ RUN apt-get update && apt-get install -y git git-lfs && \
     git lfs pull
 
 # Install Python dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements-backend.txt .
+RUN pip install --no-cache-dir -r requirements-backend.txt
+
 
 # Copy API code and models
 COPY api/ ./api/
