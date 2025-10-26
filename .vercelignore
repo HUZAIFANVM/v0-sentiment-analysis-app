@@ -1,0 +1,27 @@
+# Python backend files
+api/
+requirements*.txt
+Dockerfile
+docker-compose.yml
+.dockerignore
+pyproject.toml
+Pipfile
+Pipfile.lock
+
+# Development files
+scripts/
+BACKEND_SETUP.md
+DEPLOYMENT.md
+
+# Git files
+.git
+.gitignore
+
+# Node modules (already handled by Vercel)
+node_modules/
+.next/
+
+# Environment files
+.env
+.env.local
+.env.*.local
