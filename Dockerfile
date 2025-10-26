@@ -1,16 +1,24 @@
 # Build stage
+# Build stage
 FROM python:3.11-slim as backend
 
 WORKDIR /app
 
-# Install dependencies
+# Install git and git-lfs (to fetch large model files)
+RUN apt-get update && apt-get install -y git git-lfs && \
+    git lfs install && \
+    git lfs pull
+
+# Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy API code
+# Copy API code and models
 COPY api/ ./api/
 COPY models/ ./models/
 
 EXPOSE 8000
 
+# Run the FastAPI app using uvicorn
 CMD ["python", "-m", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
